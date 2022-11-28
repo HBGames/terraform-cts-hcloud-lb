@@ -9,6 +9,10 @@ terraform {
   }
 }
 
+provider "hcloud" {
+  token = var.hcloud_token
+}
+
 resource "hcloud_load_balancer" "load_balancer" {
   name               = "traefik-load-balancer"
   load_balancer_type = "lb11"
